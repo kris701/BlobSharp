@@ -1,7 +1,7 @@
 ﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace AzureBlobInterface
+namespace BlobSharp
 {
 	public class BlobStorageClient
 	{
@@ -27,7 +27,7 @@ namespace AzureBlobInterface
 		{
 			var container = await GetCloudBlobContainer(directory, true);
 			var picBlob = container.GetBlockBlobReference(fileName);
-			if (!(await picBlob.ExistsAsync()))
+			if (!await picBlob.ExistsAsync())
 				throw new Exception($"File does not exist in the directory '{directory}'");
 			MemoryStream memoryStream = new MemoryStream();
 			await picBlob.DownloadToStreamAsync(memoryStream);
@@ -38,7 +38,7 @@ namespace AzureBlobInterface
 		{
 			var container = await GetCloudBlobContainer(directory, true);
 			var picBlob = container.GetBlockBlobReference(fileName);
-			if (!(await picBlob.ExistsAsync()))
+			if (!await picBlob.ExistsAsync())
 				throw new Exception($"File does not exist in the directory '{directory}'");
 
 			var totalLength = await GetFileLengthAsync(directory, fileName);
@@ -56,7 +56,7 @@ namespace AzureBlobInterface
 		{
 			var container = await GetCloudBlobContainer(directory, true);
 			var picBlob = container.GetBlockBlobReference(fileName);
-			if (!(await picBlob.ExistsAsync()))
+			if (!await picBlob.ExistsAsync())
 				throw new Exception($"File does not exist in the directory '{directory}'");
 
 			await picBlob.FetchAttributesAsync();

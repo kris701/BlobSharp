@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/8ae7bc6c-2243-47dc-aec1-4660514c39b2" width="200" height="200" />
+    <img src="https://github.com/user-attachments/assets/90264492-f2d1-475c-922a-a35e56629c99" width="200" height="200" />
 </p>
 
 [![Build and Publish](https://github.com/kris701/BlobSharp/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/kris701/BlobSharp/actions/workflows/dotnet-desktop.yml)

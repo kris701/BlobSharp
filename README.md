@@ -15,3 +15,16 @@
 
 # BlobSharp
 
+BlobSharp is a simple managed interface to communicate with [Azure Blob Storage accounts](https://azure.microsoft.com/en-us/products/storage/blobs/?ef_id=_k_Cj0KCQjww5u2BhDeARIsALBuLnN_Sexqki1LbNjC2Ilf9sVSfM4b-3MUivbJlEJb3Rall4hkPDsFkVAaAsVpEALw_wcB_k_&OCID=AIDcmmeauvx05c_SEM__k_Cj0KCQjww5u2BhDeARIsALBuLnN_Sexqki1LbNjC2Ilf9sVSfM4b-3MUivbJlEJb3Rall4hkPDsFkVAaAsVpEALw_wcB_k_&gad_source=1&gclid=Cj0KCQjww5u2BhDeARIsALBuLnN_Sexqki1LbNjC2Ilf9sVSfM4b-3MUivbJlEJb3Rall4hkPDsFkVAaAsVpEALw_wcB).
+You can download, upload, delete, etc files on your blob storage account with this package.
+
+As an example, one can do the following to download a file from your blob storage:
+```csharp
+var client = new BlobStorageClient("<--Connection String Here-->");
+using (var stream = await client.DownloadAsStreamAsync("somedir", "file"))
+{
+    // Do something with the file.
+}
+```
+
+The package is available on the [NuGet Package Manager](https://www.nuget.org/packages/BlobSharp/).
